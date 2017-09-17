@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
     String version;
     int verCode;
-    private final String url="http://webserver adreess/AutoUpdate.apk";
+    private final String url="http://webserverAdreess/AutoUpdate.apk";
 
 
     String destination;
@@ -41,8 +41,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
         try {
             PackageInfo pInfo = this.getPackageManager().getPackageInfo(getPackageName(), 0);
             version = pInfo.versionName;
@@ -51,13 +49,9 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-//inja bayad version az server check shavad va ba version feli moghayese shavad  agar version jadid amade bood version jadid dawnload shavad
 
         if(checkPermition()) {
-
         }
-
-
         }
 
 
@@ -73,13 +67,9 @@ public class MainActivity extends AppCompatActivity {
         file = new File(destination);
 
         if (file.exists())
-            //file.delete() - test this, I think sometimes it doesnt work
             file.delete();
 
         //get url of app on server
-
-
-        //g.i("111","7");set downloadmanager
         DownloadManager.Request request = new DownloadManager.Request(Uri.parse(apkurl));
 
         request.setDescription(MainActivity.this.getString(R.string.notification_description));
@@ -108,7 +98,6 @@ public class MainActivity extends AppCompatActivity {
                 intent = new Intent(Intent.ACTION_VIEW, fileUri);
                 intent.putExtra(Intent.EXTRA_NOT_UNKNOWN_SOURCE, true);
                 intent.setDataAndType(fileUri,  manager.getMimeTypeForDownloadedFile(downloadId));
-                //install.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
 

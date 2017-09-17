@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">AutoUpdate</string>
     <string name="update_app_url" >AutoUpdate</string>
-    <string name="notification_description" >downloade</string>
+    <string name="notification_description" >download</string>
 </resources>
