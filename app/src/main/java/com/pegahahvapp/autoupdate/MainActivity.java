@@ -51,7 +51,6 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-
 //inja bayad version az server check shavad va ba version feli moghayese shavad  agar version jadid amade bood version jadid dawnload shavad
 
         if(checkPermition()) {
